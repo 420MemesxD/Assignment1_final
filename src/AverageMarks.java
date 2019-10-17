@@ -3,55 +3,85 @@ import java.util.Scanner;
 
 public class AverageMarks {
 
+ /*
+    The main method first prints to the screen "please input a grade". It then waits for user input to input a grade.
+    The main method then checks the number to see if it is in-between 0 and 100. If it is grater than 100 or less than 0
+    the system will print out "That grade is invalid please restart and try again" and exit the program. The main Method
+    will then ask again for a grade, wait for input and check the input to see if it is grater than 100 or less than 0.
+    This process of asking for input waiting for input and checking input repeats six times. The main method then gets the
+    letter grades for all of the values entered by the user. This is done by checking each grade number and based off what
+    number it is assign it an overall letter grade. For example if the entered grade was 78% then because it is
+    between 75 and 79 it is assigned the rating of +B. This process is repeated for all 6 grades entered.The main method
+    then prints out all 6 of your grades to the screen with the their corresponding letter grades. The main method then
+    calculates the overall grade average and prints it to the screen. The main method then calculates the letter grade
+    for your average and prints it to the screen next to your grade. The main method is now finished and exits.
 
+    grade1-grade6 = group of 6 grades
+    print enter a grade
+    input the grade
+    if the grade is not valid exit system
+    else
+    store the grade inside of grade1-grade6
+    print the corresponding letter grade and number to the grade that was entered
+    print the average grade and corresponding letter grade to the average grade
 
+*/
 
     public static void main(String[] args) {
 
         Scanner keyboard = new Scanner(System.in); //creates the scanner.
+
+        //ask user for a grade
         System.out.printf("please input a grade ");
         int grade1 = keyboard.nextInt();
 
+        //check grade6 to see if its in between 0 and 100
         if (grade1 < 0 || grade1 > 100) {
             System.out.printf("That grade is invalid please restart and try again");
             System.exit(0);
 
         }
+        //ask user for a grade
         System.out.printf("please input a grade ");
         int grade2 = keyboard.nextInt();
 
+        //check grade6 to see if its in between 0 and 100
         if (grade2 < 0 || grade2 > 100) {
             System.out.printf("That grade is invalid please restart and try again");
             System.exit(0);
         }
-
+        //ask user for a grade
         System.out.printf("please input a grade ");
         int grade3 = keyboard.nextInt();
 
+        //check grade3 to see if its in between 0 and 100
         if (grade3 < 0 || grade3 > 100) {
             System.out.printf("That grade is invalid please restart and try again");
             System.exit(0);
         }
 
+        //ask user for a grade
         System.out.printf("please input a grade ");
         int grade4 = keyboard.nextInt();
 
+        //check grade4 to see if its in between 0 and 100
         if (grade4 < 0 || grade4 > 100) {
             System.out.printf("That grade is invalid please restart and try again");
             System.exit(0);
         }
-
+        //ask user for a grade
         System.out.printf("please input a grade ");
         int grade5 = keyboard.nextInt();
 
+        //check grade5 to see if its in between 0 and 100
         if (grade5 < 0 || grade5 > 100) {
             System.out.printf("That grade is invalid please restart and try again");
             System.exit(0);
         }
-
+        //ask user for a grade
         System.out.printf("please input a grade ");
         int grade6 = keyboard.nextInt();
-
+        //check grade6 to see if its in between 0 and 100
         if (grade6 < 0 || grade6 > 100) {
             System.out.printf("That grade is invalid please restart and try again");
             System.exit(0);
@@ -236,7 +266,7 @@ public class AverageMarks {
             System.out.printf("6. %d%% = A+%n" ,grade6);
         }
 
-
+        //print out the average grade and its corresponding letter grade
         System.out.printf("and your average grade is %.1f%%", avgrade(grade1, grade2, grade3, grade4, grade5, grade6));
         if (avgrade(grade1, grade2, grade3, grade4, grade5, grade6) < 50) {
             System.out.printf(" Thats a E%n");
@@ -267,6 +297,11 @@ public class AverageMarks {
         }
 
     }
+
+
+    /**
+     * This method collects all the user entered grades and calculates an overall average grade.
+    */
 
     public static double avgrade(int num1, int num2, int num3, int num4, int num5, int num6) {
         return (double) ((num1 + num2 + num3 + num4 + num5 + num6) / 6);
